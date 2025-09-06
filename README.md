@@ -6,14 +6,17 @@ This report provides a detailed guide to create a full-stack TaskManager applica
 
 ## Index
 
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [API Setup](#api-setup)
-- [Blazor Client Setup](#blazor-client-setup)
-- [TaskService](#taskservice)
-- [TaskManager Component](#taskmanager-component)
-- [Styling (CSS)](#styling-css)
-- [Lessons Learned](#lessons-learned)
+* [Introduction](#introduction)
+* [Prerequisites](#prerequisites)
+* [API Setup](#api-setup)
+* [Blazor Client Setup](#blazor-client-setup)
+* [TaskService](#taskservice)
+* [TaskManager Component](#taskmanager-component)
+* [Styling (CSS)](#styling-css)
+* [Running the App](#running-the-app)
+* [Folder Structure](#folder-structure)
+* [Optional Enhancements](#optional-enhancements)
+* [Lessons Learned](#lessons-learned)
 
 ---
 
