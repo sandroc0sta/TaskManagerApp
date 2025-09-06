@@ -6,6 +6,6 @@ namespace TaskManagerAPI.Models
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
 
-        public bool isDone { get; set; } = false;
+        public bool IsDone { get; set; } = false;
     }
 }

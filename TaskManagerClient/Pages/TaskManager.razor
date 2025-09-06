@@ -1,0 +1,63 @@
+@page "/"
+@inject TaskService TaskService
+@using TaskManagerClient.Models
+@using TaskManagerClient.Services
+
+
+<div class="task-container">
+    <h1>My Task Manager</h1>
+
+    <div id="new-task-box">
+        <input id="new-task-input" @bind="newTaskTitle" placeholder="New task" />
+        <button id="new-task-button" @onclick="AddTask">Add</button>
+    </div>
+
+    <ul class="task-list">
+        @foreach (var task in tasks)
+        {
+            <li class="task-item">
+                <input type="checkbox" checked="@task.IsDone" @onchange="@(e => OnCheckboxChanged(task, e))" />
+                <span class="task-title">@task.Title</span>
+                <button class="delete-btn" @onclick="() => DeleteTask(task.Id)">Delete</button>
+            </li>
+        }
+    </ul>
+</div>
+
+@code {
+    private List<TaskItem> tasks = new();
+    private string newTaskTitle = string.Empty;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        tasks = await TaskService.GetTasks();
+    }
+
+    private async Task AddTask()
+    {
+        if(!string.IsNullOrWhiteSpace(newTaskTitle))
+        {
+            var task = new TaskItem {Title = newTaskTitle, IsDone = false};
+            var createdTask = await TaskService.AddTask(task);
+            tasks.Add(createdTask);
+            newTaskTitle = string.Empty;
+        }
+    }
+
+    private async Task UpdateTask(TaskItem task)
+    {
+        await TaskService.UpdateTask(task);
+    }
+
+    private async Task DeleteTask( int id)
+    {
+        await TaskService.DeleteTask(id);
+        tasks.RemoveAll(t => t.Id == id);
+    }
+
+    private async Task OnCheckboxChanged(TaskItem task, ChangeEventArgs e)
+    {
+        task.IsDone = (bool)e.Value; 
+        await TaskService.UpdateTask(task); 
+    }
+}
