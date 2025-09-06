@@ -57,7 +57,7 @@ cd ../TaskManagerClient
 
 ---
 
-## 2. Setting up the API
+## 2. API Setup
 
 ### 2.1 Project Creation
 
@@ -348,7 +348,7 @@ namespace TaskManagerClient.Services
 
 ---
 
-## 6. Styling (CSS)
+## 6. Styling CSS
 
 ### 6.1 site.css
 
