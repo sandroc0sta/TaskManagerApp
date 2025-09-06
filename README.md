@@ -57,7 +57,7 @@ cd ../TaskManagerClient
 
 ---
 
-2. ## API Setup
+##2. ## API Setup
 
 ### 2.1 Project Creation
 
@@ -183,7 +183,7 @@ app.Run();
 
 ---
 
-3. ## Blazor Client Setup
+##3. ## Blazor Client Setup
 
 ### 3.1 Project Creation
 
@@ -220,7 +220,7 @@ dotnet new blazorwasm -n TaskManagerClient
 
 ---
 
-4 ## TaskService
+##4 ## TaskService
 
 ### 4.1 TaskService Class
 
@@ -266,7 +266,7 @@ namespace TaskManagerClient.Services
 
 ---
 
-5. ## TaskManager Component
+##5. ## TaskManager Component
 
 ### 5.1 TaskManager.razor
 
@@ -348,7 +348,7 @@ namespace TaskManagerClient.Services
 
 ---
 
-6. ## Styling CSS
+##6. ## Styling CSS
 
 ### 6.1 site.css
 
@@ -470,7 +470,7 @@ input[type="checkbox"] {
 
 ---
 
-7. ## Running the App
+##7. ## Running the App
 
 ```bash
 # Run API
@@ -487,7 +487,7 @@ dotnet run
 
 ---
 
-8. ## Folder Structure
+##8. ## Folder Structure
 
 ```
 TaskManagerAPI/
@@ -510,7 +510,7 @@ TaskManagerClient/
 
 ---
 
-9. ## Optional Enhancements
+##9. ## Optional Enhancements
 
 * Use EF Core migrations instead of `EnsureCreated()`.
 * Add user authentication.
@@ -520,7 +520,7 @@ TaskManagerClient/
 
 ---
 
-10. ## Lessons Learned
+##10. ## Lessons Learned
 
 * Always ensure `@bind` and `@onchange` are not duplicated on the same element.
 * Use proper string interpolation (`$"tasks/{task.Id}"`) to avoid `$tasks/%7Btask.Id%7D` errors.
